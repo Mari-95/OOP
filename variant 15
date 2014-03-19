@@ -1,0 +1,34 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+class KORABEL
+{
+protected:
+char name; 
+int displacement; 
+char type; 
+public:
+KORABEL(); 
+KORABEL(char*, int, char*); 
+KORABEL(const KORABEL&); 
+~KORABEL();
+char * GetName() ;
+int GetDisplacement () const;
+float GetType() const;
+void SetName(char*);
+void SetType(int);
+void SetDisplacement(char*);
+void Set(char*,int,char*);
+void Show(); 
+};
+KORABEL::~KORABEL()
+
+int main()
+{ KORABEL K1;
+KORABEL K2;
+}
+system("PAUSE");
+return EXIT_SUCCESS;
+}
