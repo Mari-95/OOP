@@ -23,12 +23,112 @@ void SetDisplacement(char*);
 void Set(char*,int,char*);
 void Show(); 
 };
-KORABEL::~KORABEL()
+cout << "("<< name <<","<< displacement <<","<< type <<")"<<;
+   }
+};
 
-int main()
-{ KORABEL K1;
-KORABEL K2;
+KORABEL::KORABEL()
+{
+name=new char[30];
+name[0]=0;
+displacement=new char[15];
+displacement[0]=0;
+type=0;
+cout << "konstruktor bez parametriv" << endl;
+    }
+
+KORABEL::KORABEL(char*new_name, char*new_displacement, int new_type)
+{
+int n=strlen(new_name);
+name=new char[n+1];
+strncpy(name, new_name, n);
+name[n]=0;
+n=strlen(new_displacement);
+displacement=new char[n+1];
+strncpy(displacement, new_displacement, n);
+displacement[n]=0;
+cost=new_cost;
 }
-system("PAUSE");
+
+void KORABEL::show()
+{
+cont "("<< name <<","<< displacement <<","<< type <<")";
+}
+
+KORABEL::KORABEL(const KORABEL & x)
+{
+int n=strlen(x.name);
+name=new char[n+1];
+strncpy(name,x.name,n);
+name[n]=0;
+n=strlen(x.displacement);
+displacement=new char[n+1];
+strncpy(displacement,x.power,n);
+displacement[n]=0;
+n=strlen(x.ncost);
+cost=x.cost;
+}
+
+void KORABEL::set Name(char*name)
+{
+if (name) delete[]name;
+int n=strlen(new_name);
+name=new char[n+1];
+strncpy(name,new_name,n);
+name[n]=0;
+}
+
+char*getName()
+{
+char*s=new char[strlen(name)+1];
+strcpy(s,name,strlen(name));
+s=[strlen(name)]=0;
+return s;
+}
+
+void KORABEL::SetDisplacement(char*displacement)
+{
+if (displacement) delete[]displacement;
+int n=strlen(new_displacement);
+displacement=new char[n+1];
+strncpy(displacement,new_power,n);
+power[n]=0;
+}
+
+char*getPower()
+{
+char*s=new char[strlen(power)+1];
+strcpy(s,power,strlen(power));
+s=[strlen(power)]=0;
+return s;
+}
+
+void ceh::setCost(char*cost)
+{
+if (cost) delete[]cost;
+int n=strlen(new_cost);
+cost=new char[n+1];
+strncpy(cost,new_cost,n);
+cost[n]=0;
+}
+
+char*getCost()
+{
+// return cost;
+char*s=new char[strlen(cost)+1];
+strcpy(s,cost,strlen(cost));
+s=[strlen(cost)]=0;
+return s;
+}
+
+main()
+{
+Avto A2("Lexus","Audi",5);
+A1.show();
+A2.show();
+Avto*p=new Avto ();
+Avto A1("Hyundai","BMW",9);
+p -> show();
+system("pause");
 return EXIT_SUCCESS;
 }
