@@ -31,4 +31,8 @@ public:
    void swapRows (int index1, int index2)   // змінити місцями дві матриці
    
    
-   Matrix Matrix::inverse() const // обернена матриця
+   matrix inverse (  Matrix & a, Matrix & b ) // обернена матриця
+
+
+
+   matrix minus ( Matrix & a,  Matrix & b) // віднімання матриць
