@@ -47,7 +47,7 @@ n=strlen(new_displacement);
 displacement=new char[n+1];
 strncpy(displacement, new_displacement, n);
 displacement[n]=0;
-cost=new_cost;
+type=new_type;
 }
 
 void KORABEL::show()
@@ -69,7 +69,7 @@ n=strlen(x.ncost);
 cost=x.cost;
 }
 
-void KORABEL::set Name(char*name)
+void KORABEL::setName(char*name)
 {
 if (name) delete[]name;
 int n=strlen(new_name);
@@ -92,42 +92,42 @@ if (displacement) delete[]displacement;
 int n=strlen(new_displacement);
 displacement=new char[n+1];
 strncpy(displacement,new_power,n);
-power[n]=0;
+Displacement[n]=0;
 }
 
-char*getPower()
+char*getDisplacement()
 {
-char*s=new char[strlen(power)+1];
-strcpy(s,power,strlen(power));
-s=[strlen(power)]=0;
+char*s=new char[strlen(Displacement)+1];
+strcpy(s,Displacement,strlen(Displacement));
+s=[strlen(Displacement)]=0;
 return s;
 }
 
-void ceh::setCost(char*cost)
+void ceh::setType(char*type)
 {
-if (cost) delete[]cost;
-int n=strlen(new_cost);
-cost=new char[n+1];
-strncpy(cost,new_cost,n);
-cost[n]=0;
+if (type) delete[]type;
+int n=strlen(new_type);
+type=new char[n+1];
+strncpy(type,new_type,n);
+type[n]=0;
 }
 
-char*getCost()
+char*getType()
 {
-// return cost;
-char*s=new char[strlen(cost)+1];
-strcpy(s,cost,strlen(cost));
-s=[strlen(cost)]=0;
+// return type;
+char*s=new char[strlen(type)+1];
+strcpy(s,type,strlen(type));
+s=[strlen(type)]=0;
 return s;
 }
 
 main()
 {
-Avto A2("Lexus","Audi",5);
+KORABEL A2("Doneck","Cherckasy",5);
 A1.show();
 A2.show();
-Avto*p=new Avto ();
-Avto A1("Hyundai","BMW",9);
+Korabel*p=new Korabel ();
+Korabel A1("Lviv","Kyiv",9);
 p -> show();
 system("pause");
 return EXIT_SUCCESS;
