@@ -1,21 +1,25 @@
 using namespace std;
 class Matrix
 {
-  private:
-            int nstr,nstl;
-            int **a;
+  protected:
+           int k_ryadkiv;
+           int k_stovpciv;
+           double **a;
     public:
-            Matrix (int m,int n);  
-            Matrix (int m,int n,int *b);       
-            ~Matrix ();
-            Matrix operator + (Matrix b);   // оператор додавання 
-            Matrix operator * (Matrix b);   // оператор множення
-            Matrix operator * (int c);
-            Matrix operator = (Matrix b);   // оператор присвоєння 
-            Matrix operator += (Matrix b);  // оператор додавання з писвоєнням 
-            Matrix (const Matrix &T);
-            Matrix inverse (  Matrix & a, Matrix & b );   // обернена матриця 
-            Matrix determinant (int **a, unsigned int n) 
+            Matrix ();
+            Matrix (int n_ryadkiv,int m_stovpciv);  
+            Matrix (int n_ryadkiv,int m_stovpciv, int **b);       
+            Matrix (const Matrix &m);
+            Matrix operator + (Matrix &b);   // оператор додавання 
+            friend Matrix operator * (Matrix &a, Matrix &b);   // оператор множення
+            Matrix operator - (Matrix &b);
+            Matrix operator = (Matrix &b);   // оператор присвоєння 
+            Matrix inverse ();   // обернена матриця 
+            Matrix determinant ()  // детермінант 
+            double GetCoef (int x, int y);
+            void SetCoef (int x, int y, double v);
+            void Show ();
+            friend ostream&operator << (osream &os, Matrix &a)
             void Print ();
             
 };
