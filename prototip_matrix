@@ -8,18 +8,14 @@ class Matrix
             Matrix (int m,int n);  
             Matrix (int m,int n,int *b);       
             ~Matrix ();
-            Matrix operator + (Matrix b);
-            Matrix operator * (Matrix b);
+            Matrix operator + (Matrix b);   // оператор додавання 
+            Matrix operator * (Matrix b);   // оператор множення
             Matrix operator * (int c);
-            Matrix operator = (Matrix b);
-            Matrix operator += (Matrix b);
+            Matrix operator = (Matrix b);   // оператор присвоєння 
+            Matrix operator += (Matrix b);  // оператор додавання з писвоєнням 
             Matrix (const Matrix &T);
-            Matrix & operator = (const Matrix &);
-            Matrix add (Matrix & a, Matrix & b);  // äîäàâàííÿ äâîõ ìàòðèöü
-            Matrix mul (Matrix & a, double k);// ïåðåìíîæèòè ìàòðèöþ íà ÷èñëî
-            Matrix mul (Matrix & a, Matrix & b);// ïåðåìíîæèòè äâ³ ìàòðèö³ 
-            Matrix inverse (  Matrix & a, Matrix & b ); // îáåðíåíà ìàòðèöÿ
-            Matrix minus ( Matrix & a,  Matrix & b); // â³äí³ìàííÿ ìàòðèöü
+            Matrix inverse (  Matrix & a, Matrix & b );   // обернена матриця 
+            Matrix determinant (int **a, unsigned int n) 
             void Print ();
             
 };
